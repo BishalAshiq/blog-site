@@ -1,8 +1,10 @@
 'use client';
 import { useTheme } from '@/context/ThemeContext';
+import Switch from '@mui/material/Switch';
 
 export default function ThemeToggle() {
   const { isDark, setIsDark } = useTheme();
+
 
   const toggleTheme = () => {
     setIsDark((prev) => {
@@ -14,11 +16,13 @@ export default function ThemeToggle() {
   };
 
   return (
+
+
     <button
       onClick={toggleTheme}
       className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white transition-colors duration-200"
     >
-      {isDark ? '🌞 Light' : '🌙 Dark'}
+      {isDark ? '🌞 ' : '🌙 '}
     </button>
   );
 }
