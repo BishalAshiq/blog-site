@@ -1,6 +1,7 @@
 'use client'; 
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useBlog } from '@/context/BlogContext';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 export default function PostPage() {
@@ -16,6 +17,11 @@ export default function PostPage() {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-4 dark:text-white">{post.title}</h1>
       <p className="text-gray-700 dark:text-gray-300">{post.body}</p>
+
+
+      <Link href={"/"}>
+        <ArrowBackIcon/>
+      </Link>
     </div>
   );
 }
