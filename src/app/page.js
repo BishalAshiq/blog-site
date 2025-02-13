@@ -3,6 +3,8 @@ import { useState } from 'react';
 import PostCard from '@/components/PostCard';
 import SearchBar from '@/components/SearchBar';
 import { useBlog } from '@/context/BlogContext';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 export default function HomePage() {
   const { posts, loading, error } = useBlog();
@@ -13,7 +15,10 @@ export default function HomePage() {
     post.body.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (loading) return <div className="text-center p-8">Loading posts...</div>;
+  if (loading) return <div className="text-center p-8"> 
+  <Box sx={{ display: 'flex' }}>
+  <CircularProgress />
+   </Box></div>;
   if (error) return <div className="text-center p-8 text-red-500">Error: {error}</div>;
 
   return (
