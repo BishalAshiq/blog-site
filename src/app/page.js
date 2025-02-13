@@ -15,10 +15,12 @@ export default function HomePage() {
     post.body.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (loading) return <div className="text-center p-8"> 
-  <Box sx={{ display: 'flex' }}>
-  <CircularProgress />
-   </Box></div>;
+  if (loading) return <div className="text-center p-8">
+    <Box sx={{ display: 'flex', justifyContent: "center" }}>
+      <CircularProgress />
+      <CircularProgress />
+      <CircularProgress />
+    </Box></div>;
   if (error) return <div className="text-center p-8 text-red-500">Error: {error}</div>;
 
   return (
